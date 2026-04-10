@@ -49,5 +49,11 @@
 
 * Ajout d'un ascenseur fou dans le main. Avec un id dépassant le nombre d'ascenseur de l'hotel
 
+## Partie 2.6 
+
+* on choisit de créer direction un Boolean (True vers le haut, False vesr le bas et Null pour inactif)
+    Nous n'avons pas ajouté la direction des personnes car nous n'avons pas trouvé d'utilité à ce parametre
+
+* Mise à jour de la fonction move() d'Elevator et CrazyElevator
 
 
