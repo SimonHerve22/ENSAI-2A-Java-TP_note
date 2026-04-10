@@ -52,9 +52,9 @@ public class CrazyElevator extends Elevator {
     @Override
     /**
      * Unloads passengers whose target floor matches the current floor... if the crazy elevator wants to, half of the time.
-     * Updates the lastUnloaded list.
+     * Updates the last unloaded list.
      * 
-     * @param floor the Floor where passengers will exit
+     * @param floor the Floor where passengers might exit
      * @return the number of passengers unloaded
      */
     public int unloadPassengers(Floor floor) {
@@ -88,7 +88,7 @@ public class CrazyElevator extends Elevator {
     @Override
     /**
      * Checks if the elevator is full.
-     * If the elevator is full, sends its passengers into another dimension (death).
+     * If the elevator is full, sends its passengers into another dimension (death, probably).
      * @return boolean : true if the elevator is full, false otherwise
      */
     public boolean isFull(){

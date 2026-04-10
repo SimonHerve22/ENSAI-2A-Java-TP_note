@@ -84,7 +84,7 @@ public class Floor {
             if (elevator.containDestination(this.number)){
                 checkDest = true;
             }
-            if (checkDest) break;
+            if (checkDest) break; /* no need to check for the least busy elevator anymore, there's an elevator on the way */
             if (elevator.getDestinationQueueSize()<nbDestMin){
                 nbDestMin = elevator.getDestinationQueueSize();
                 idElevMin = elevator.getId();

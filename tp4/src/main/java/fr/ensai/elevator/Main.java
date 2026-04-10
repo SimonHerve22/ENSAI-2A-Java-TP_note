@@ -31,7 +31,7 @@ public class Main {
         for (int i = 1 ; i <= nbElevators ; i++){
             elevators.add(new Elevator(i, 0, elevatorCapacity));
         }
-        elevators.add(new CrazyElevator(Config.getInt("hotel.elevators"), 0, elevatorCapacity));
+        elevators.add(new CrazyElevator(Config.getInt("hotel.elevators"), 0, elevatorCapacity)); /* crazy elevator, not mixed with normal elevators */
         Hotel hotel = new Hotel(floors, elevators);
 
         // --------------------------------------------------------------------

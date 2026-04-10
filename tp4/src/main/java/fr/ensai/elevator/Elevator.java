@@ -11,8 +11,8 @@ import org.apache.logging.log4j.Logger;
  * Represents an elevator in a hotel simulation.
  * <p>
  * Each Elevator has an ID, capacity, current floor, a list of passengers, a
- * queue of destination floors, and a record of last unloaded passengers. It
- * can move between floors, load and unload passengers, and maintain its queue
+ * queue of destination floors, a record of last unloaded passengers and a direction. 
+ * It can move between floors, load and unload passengers, and maintain its queue
  * of destinations.
  */
 public class Elevator {
@@ -116,7 +116,7 @@ public class Elevator {
 
     /**
      * Unloads passengers whose target floor matches the current floor.
-     * Updates the lastUnloaded list.
+     * Updates the last unloaded list.
      * 
      * @param floor the Floor where passengers will exit
      * @return the number of passengers unloaded
@@ -181,6 +181,8 @@ public class Elevator {
 
     /**
      * Indicates to the Hotel the way he should print the arrows
+     * 
+     * @return a String indicating the direction the elevator is going
      */
     public String getDirection(){
         if (this.direction == Boolean.FALSE) return "↓";

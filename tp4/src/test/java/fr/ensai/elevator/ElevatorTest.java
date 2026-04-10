@@ -11,6 +11,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class ElevatorTest {
 
     @Test
+    /*
+    Tests whether an elevator considers itself full if the capacity is maxed.
+    */
     void testIsFull(){
 
         // GIVEN
@@ -28,6 +31,9 @@ public class ElevatorTest {
     }
 
     @Test
+    /*
+    Tests whether an elevator doesn't consider itself full if the capacity isn't maxed.
+    */
     void testIsNotFull(){
 
         // GIVEN
@@ -43,6 +49,9 @@ public class ElevatorTest {
     }
 
     @Test
+    /*
+    Tests everything that should happen when we add a destination to an elevator.
+    */
     void testAddDestination(){
 
         // GIVEN
@@ -60,6 +69,9 @@ public class ElevatorTest {
     }
 
     @Test
+    /*
+    Tests everything that should happen when we add TWICE the same destination to an elevator.
+    */
     void testAddTwiceSameDestination(){
 
         // GIVEN
@@ -78,6 +90,9 @@ public class ElevatorTest {
     }
 
     @Test
+    /*
+    Tests everything that should happen when we add two destinations to an elevator.
+    */
     void testAddTwoDestinations(){
 
         // GIVEN
