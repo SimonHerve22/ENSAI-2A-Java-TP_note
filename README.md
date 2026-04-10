@@ -5,16 +5,16 @@ Toutes les questions ont été complétées, avec pour chacune une explication s
 
 ### Partie 2.1
 
-* On modifie le paramétre du fichier resources > application.yml
+* On modifie le paramètre du fichier resources > application.yml.
     spawn-probability:
         ground: 0.6 -> 0.65
 
-* Actuellement, la méthjode utilisée est "floors.add(new Floor(numero));" pour chaque ascenseur à créer, ce qui n'est pas trés pratique.
-    -> Création d'une boucle for, avec le nombre d'ascenseurs et d'étages stocké dans le fichiers resources > application.yml
+* Actuellement, la méthode utilisée est "floors.add(new Floor(numero));" pour chaque ascenseur à créer, ce qui n'est pas trés pratique.
+    -> Création d'une boucle for, avec le nombre d'ascenseurs et d'étages stocké dans le fichiers resources > application.yml.
 
 * Dans la classe Person : on remplace le random.nextInt(4) par random.Config.getInt(key:"hotel.elevators").
 
-* Création d'une fonction isFull() qui renvoie un boolean si l'ascenseur est complet (this.passengers.size() == this.capacity)
+* Création d'une fonction isFull() qui renvoie un boolean si l'ascenseur est complet (this.passengers.size() == this.capacity).
 
 * Cette fonction est réutilisée dans la fonction loadPassengers(Floor floor), qui vérifie si l'ascenseur n'est pas plein avant de charger des passagers supplémentaires.
 
@@ -27,14 +27,14 @@ Toutes les questions ont été complétées, avec pour chacune une explication s
 
 ### Partie 2.3
 
-* Modification de la fonction generateTargetFloor() en enlevant le static et en modifiant les appels de cette fonction dans cette classe. Désormais, l'étage visé est retiré au sort dès lors qu'il est égal à l'étage de départ.
+* Modification de la fonction generateTargetFloor() en enlevant le static qui posait problème et en modifiant les appels de cette fonction dans cette classe. Désormais, l'étage visé est de nouveau tiré au sort tant qu'il est égal à l'étage de départ.
 
 
 ### Partie 2.4
 
 * Pour tester si un ascenseur est plein, il faut faire appel à beaucoup d'autres fonctions, notamment ajouter des gens à l'ascenseur... Il est assez difficile de contrôler en temps réel le nombre de personnes dans un ascenseur.
 
-* Pour resoudre ce problçme, nous avons créé un nouveau constructeur qui prend directement une liste de passagers. Cela va nous simplifier les tests.
+* Pour resoudre ce problème, nous avons créé un nouveau constructeur qui prend directement une liste de passagers. Cela va nous simplifier les tests.
 
 * Cinq tests réalisés : pour isFull(), nous testons les cas où il doit être plein et où il ne doit pas être plein. Pour addDestination(), nous testons les cas où nous ajoutons une destination, deux destinations, et deux fois la même destination.
 
@@ -53,9 +53,9 @@ Toutes les questions ont été complétées, avec pour chacune une explication s
 ## Partie 2.6 
 
 * On crée la variable direction, en ayant choisi un type Boolean (BOOLEAN.True vers le haut, BOOLEAN.False vers le bas et null pour inactif) -> pour prendre en compte la valeur null.
-    Nous n'avons pas ajouté la direction des personnes car nous n'avons pas trouvé d'utilité à ce paramètre (nous n'affichons que la direction de l'ascenseur au final...)
+    Nous n'avons pas ajouté la direction des personnes car nous n'avons pas trouvé d'utilité à ce paramètre (nous n'affichons que la direction de l'ascenseur au final...).
 
-* Mise à jour de la fonction move() d'Elevator et CrazyElevator pour modifier la direction de l'ascenseur
+* Mise à jour de la fonction move() d'Elevator et CrazyElevator pour modifier la direction de l'ascenseur.
 
 * Ajout des fléches dans le tableau, en modifiant la classe Hotel et en ajoutant dans Elevator une fonction showDirection() renvoyant un String correspondant à la direction. Cela permet à la fonction display() dans Hotel d'afficher la direction !
 
