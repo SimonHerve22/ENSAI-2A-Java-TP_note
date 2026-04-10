@@ -94,7 +94,7 @@ public class CrazyElevator extends Elevator {
     public boolean isFull(){
         if (this.passengers.size() == this.capacity){
             passengers.clear();
-            System.out.println("L'ascenseur fou est plein... pardon, ÉTAIT plein.");
+            System.out.println("Un ascenseur fou est plein... pardon, ÉTAIT plein.");
             return true;
         }
         return false;
