@@ -179,8 +179,13 @@ public class Elevator {
         if (this.currentFloor == originalFloor) this.direction = null;
     }
 
-    public Boolean getDirection(){
-        return this.direction;
+    /**
+     * Indicates to the Hotel the way he should print the arrows
+     */
+    public String getDirection(){
+        if (this.direction == Boolean.FALSE) return "↓";
+        if (this.direction == null) return "";
+        else return "↑";
     }
 
     /**
