@@ -32,13 +32,13 @@ public class CrazyElevator extends Elevator {
                     destinationQueue.size(),
                     passengers,
                     tirage1);
-        if (destinationQueue.size()>=2){ /* minimum deux destinations, pour pouvoir en supprimer assez */
-            if (tirage1 == 2)
-                this.currentFloor = destinationQueue.removeFirst();
-            if (tirage1 == 1) {
-                this.currentFloor = destinationQueue.removeFirst();
-                this.currentFloor = destinationQueue.removeFirst();
-            }
+        /* minimum deux destinations, pour pouvoir en supprimer assez */
+        if (tirage1 == 2 && !destinationQueue.isEmpty())
+            this.currentFloor = destinationQueue.removeFirst();
+        if (tirage1 == 1 && destinationQueue.size()>=2) {
+            this.currentFloor = destinationQueue.removeFirst();
+            this.currentFloor = destinationQueue.removeFirst();
+    
             /* si on tire 0, on ne bouge pas (if tirage == 0) */
         }
     }
@@ -52,7 +52,7 @@ public class CrazyElevator extends Elevator {
      * @return the number of passengers unloaded
      */
     public int unloadPassengers(Floor floor) {
-        int tirage2 = random.nextInt(1); /* nombre entre 0 et 1, pour générer un des deux cas possibles */
+        int tirage2 = random.nextInt(2); /* nombre entre 0 et 1, pour générer un des deux cas possibles */
         if (tirage2 == 1){
             this.lastUnloaded.clear();
 
