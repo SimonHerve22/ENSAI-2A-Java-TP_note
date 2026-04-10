@@ -1,6 +1,9 @@
 # TP noté de Java - 10 avril 2026
 ## Membres du groupes : Simon HERVÉ et Marine PACHY
 
+
+Toutes les questions ont été complétées avec pour chacune une explication
+
 ### Partie 2.1
 
 * On modifie le paramétre du fichier resourses > application.yml
@@ -20,7 +23,7 @@
 ### Partie 2.2
 
 * Modification de la fonction requestElevator(List<Elevator>) avec les deux conditions
-    Nous avons choisi le nombre d'étage comme comparaison car c'est la valeur maximale du nombre de destination de l'ascenseur.
+    Nous avons choisi le nombre d'étage dans la file de l'ascenseur comme comparaison pour l'affluence car c'est la valeur maximale du nombre de destination de l'ascenseur.
 
 * Mise à jour des JavaDoc
 
