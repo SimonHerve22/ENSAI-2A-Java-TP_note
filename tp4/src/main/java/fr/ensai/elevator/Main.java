@@ -27,11 +27,11 @@ public class Main {
         }
 
         List<Elevator> elevators = new ArrayList<>();
-        final int nbElevators = Config.getInt("hotel.elevators");
+        final int nbElevators = Config.getInt("hotel.elevators") - 1 ;
         for (int i = 1 ; i <= nbElevators ; i++){
             elevators.add(new Elevator(i, 0, elevatorCapacity));
         }
-        elevators.add(new CrazyElevator(Config.getInt("hotel.elevators")+1, 0, elevatorCapacity));
+        elevators.add(new CrazyElevator(Config.getInt("hotel.elevators"), 0, elevatorCapacity));
         Hotel hotel = new Hotel(floors, elevators);
 
         // --------------------------------------------------------------------
