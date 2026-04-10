@@ -11,22 +11,33 @@
     floors.add(new Floor(i)); ce qui n'est pas trés pratique.
     Création d'une boucle for avec le nombre d'ascenseurs et d'étages stocké dans le fichiers resourses > application.yml
 
-*  on remplace le random.nextInt(4) par random.Config.getInt(key:"hotel.elevators)
+* On remplace le random.nextInt(4) par random.Config.getInt(key:"hotel.elevators")
 
-* Création d'une fonction qui renvoie un booléan si l'ascenseurs est complet
+* Création d'une fonction qui renvoie un booléan si l'ascenseur est complet
 
 * On l'utilise dans la fonction loadPassengers(Floor floor)
 
 ### Partie 2.2
 
 * Modification de la fonction requestElevator(List<Elevator>) avec les deux conditions
-    Nous avons choisit le nombre d'étage comme comparaisons car c'est la valeur maximale du nombre de destination de l'ascenseur.
+    Nous avons choisi le nombre d'étage comme comparaison car c'est la valeur maximale du nombre de destination de l'ascenseur.
 
 * Mise à jour des JavaDoc
 
 ### Partie 2.3
 
+* Modification de la fonction generateTargetFloor() en enlevant le static et en modifiant les appelles de cette fonction dans cette classes
 
-### Question 4
 
-### Question 5
+### Partie 2.4
+
+* Pour tester si un ascenseur est pleins, il faut faire appelle à beaucoup d'autre fonctions Comme ajouter des gens à l'ascenseur...
+
+* Pour resoudre ce probleme on creer un nouveaux constructeur qui prends une liste de passagers
+
+* On fait plusieurs tests (deux differents, deux pareils)
+
+### Partie 2.5
+
+
+
