@@ -27,7 +27,7 @@ public class Elevator {
     private List<Person> lastUnloaded;
 
     /**
-     * Constructs a new Elevator with the specified parameters.
+     * Constructs a new Elevator with the specified parameters, without passengers already in the elevator.
      * 
      * @param id         the unique identifier for the elevator
      * @param startFloor the floor where the elevator starts
@@ -39,6 +39,23 @@ public class Elevator {
         this.currentFloor = startFloor;
         this.destinationQueue = new ArrayList<>();
         this.passengers = new ArrayList<>();
+        this.lastUnloaded = new ArrayList<>();
+    }
+
+    /**
+     * Constructs a new Elevator with the specified parameters, with passengers already in the elevator.
+     * 
+     * @param id         the unique identifier for the elevator
+     * @param startFloor the floor where the elevator starts
+     * @param capacity   the maximum number of passengers the elevator can carry
+     * @param passengers list of passengers that spawn in the elevator at its creation.
+     */
+    public Elevator(int id, int startFloor, int capacity, List<Person> passengers) {
+        this.id = id;
+        this.capacity = capacity;
+        this.currentFloor = startFloor;
+        this.destinationQueue = new ArrayList<>();
+        this.passengers = passengers;
         this.lastUnloaded = new ArrayList<>();
     }
 
@@ -92,6 +109,8 @@ public class Elevator {
             logger.info("\tElevator {}: destinationQueue {}", this.id, this.getDestinationQueueStr());
         }
     }
+
+
 
     /**
      * Unloads passengers whose target floor matches the current floor.
@@ -152,6 +171,10 @@ public class Elevator {
         if (!destinationQueue.isEmpty())
             this.currentFloor = destinationQueue.removeFirst();
     }
+
+    /* Pour pouvoir tester qu'un ascenseur est plein, il faut tout d'abord pouvoir le remplir. 
+    Le fait de remplir this.passengers.size() utilise un grand nombre de méthodes, et il faut s'assurer qu'elles fonctionnent toutes.
+    Pour tester isFull(), il faudrait avoit this.passengers.size() directement égal à this.capacity, ce qui n'est pas si simple. */
 
     /**
      * Checks if the elevator is full.
