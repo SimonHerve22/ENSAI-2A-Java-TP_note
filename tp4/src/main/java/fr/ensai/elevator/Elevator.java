@@ -25,6 +25,7 @@ public class Elevator {
     protected List<Integer> destinationQueue;
     protected List<Person> passengers;
     protected List<Person> lastUnloaded;
+    protected Boolean direction;
 
     /**
      * Constructs a new Elevator with the specified parameters, without passengers already in the elevator.
@@ -40,6 +41,7 @@ public class Elevator {
         this.destinationQueue = new ArrayList<>();
         this.passengers = new ArrayList<>();
         this.lastUnloaded = new ArrayList<>();
+        this.direction = null;
     }
 
     /**
@@ -166,10 +168,19 @@ public class Elevator {
     /**
      * Moves the elevator to the next floor in its destination queue.
      * Removes that floor from the queue.
+     * Indicates if the elevator is going up (Boolean.TRUE), down (Boolean.FALSE) or is idle (null).
      */
     public void move() {
+        int originalFloor = this.currentFloor;
         if (!destinationQueue.isEmpty())
             this.currentFloor = destinationQueue.removeFirst();
+        if (this.currentFloor < originalFloor) this.direction = Boolean.FALSE;
+        if (this.currentFloor > originalFloor) this.direction = Boolean.TRUE;
+        if (this.currentFloor == originalFloor) this.direction = null;
+    }
+
+    public Boolean getDirection(){
+        return this.direction;
     }
 
     /**
