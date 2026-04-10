@@ -14,4 +14,4 @@ hotel:
       elevator: 24
       persons: 20
   floors: 5
-  elevators: 0
+  elevators: 3

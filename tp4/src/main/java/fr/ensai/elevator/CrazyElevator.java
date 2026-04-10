@@ -52,9 +52,11 @@ public class CrazyElevator extends Elevator {
      * @return the number of passengers unloaded
      */
     public int unloadPassengers(Floor floor) {
+        this.lastUnloaded.clear();
         int tirage2 = random.nextInt(2); /* nombre entre 0 et 1, pour générer un des deux cas possibles */
+        logger.info("tirage2 = {}",
+                    tirage2);
         if (tirage2 == 1){
-            this.lastUnloaded.clear();
 
             List<Person> remaining = new ArrayList<>();
 
@@ -86,7 +88,7 @@ public class CrazyElevator extends Elevator {
     public boolean isFull(){
         if (this.passengers.size() == this.capacity){
             passengers.clear();
-            System.out.println("L'ascenseur est plein... pardon, ÉTAIT plein.");
+            System.out.println("L'ascenseur fou est plein... pardon, ÉTAIT plein.");
             return true;
         }
         return false;
