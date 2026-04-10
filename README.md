@@ -39,5 +39,15 @@
 
 ### Partie 2.5
 
+* On créé CrazyElevator par heritage de Elevator 
+
+* Mise à jour de la fonction move() en ajoutant des probabilités
+
+* Mise à jour de unloadPassengers(Floor floor) en ajoutant des probabilités
+
+* Mise à jour de la fonction isFull() en supprimant tous les passagers si l'assenseur est plein
+
+* Ajout d'un ascenseur fou dans le main. Avec un id dépassant le nombre d'ascenseur de l'hotel
+
 
 
