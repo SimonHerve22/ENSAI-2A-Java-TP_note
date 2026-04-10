@@ -184,7 +184,7 @@ public class Elevator {
      * 
      * @return a String indicating the direction the elevator is going
      */
-    public String getDirection(){
+    public String showDirection(){
         if (this.direction == Boolean.FALSE) return "↓";
         if (this.direction == null) return "";
         else return "↑";
