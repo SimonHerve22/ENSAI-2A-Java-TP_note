@@ -43,7 +43,7 @@ public class Elevator {
     }
 
     /**
-     * Constructs a new Elevator with the specified parameters, with passengers already in the elevator.
+     * Constructs a new Elevator with the specified parameters, with passengers already in the elevator. (used for tests)
      * 
      * @param id         the unique identifier for the elevator
      * @param startFloor the floor where the elevator starts
