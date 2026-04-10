@@ -25,8 +25,11 @@ public class CrazyElevator extends Elevator {
      * One chance out of three : the elevator doesn't move.
      * One chance out of three : the elevator does what it's supposed to do, and goes to the next floor.
      * One chance out of three : the elevator skips a destination !
+     * Removes that floor from the queue.
+     * Indicates if the elevator is going up (Boolean.TRUE), down (Boolean.FALSE) or is idle (null).
      */
     public void move() {
+        int originalFloor = this.currentFloor;
         int tirage1 = random.nextInt(3); /* nombre entre 0 et 2, pour générer un des trois cas possibles */
         logger.info("destinationQueue.size = {}, passengers = {}, tirage1 = {}",
                     destinationQueue.size(),
@@ -41,6 +44,9 @@ public class CrazyElevator extends Elevator {
     
             /* si on tire 0, on ne bouge pas (if tirage == 0) */
         }
+        if (this.currentFloor < originalFloor) this.direction = Boolean.FALSE;
+        if (this.currentFloor > originalFloor) this.direction = Boolean.TRUE;
+        if (this.currentFloor == originalFloor) this.direction = null;
     }
 
     @Override
@@ -52,9 +58,11 @@ public class CrazyElevator extends Elevator {
      * @return the number of passengers unloaded
      */
     public int unloadPassengers(Floor floor) {
+        this.lastUnloaded.clear();
         int tirage2 = random.nextInt(2); /* nombre entre 0 et 1, pour générer un des deux cas possibles */
+        logger.info("tirage2 = {}",
+                    tirage2);
         if (tirage2 == 1){
-            this.lastUnloaded.clear();
 
             List<Person> remaining = new ArrayList<>();
 
@@ -86,7 +94,7 @@ public class CrazyElevator extends Elevator {
     public boolean isFull(){
         if (this.passengers.size() == this.capacity){
             passengers.clear();
-            System.out.println("L'ascenseur est plein... pardon, ÉTAIT plein.");
+            System.out.println("L'ascenseur fou est plein... pardon, ÉTAIT plein.");
             return true;
         }
         return false;
