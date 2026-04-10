@@ -21,14 +21,16 @@ public class Main {
         final int msBetweenSteps = Config.getInt("steps.delay");
 
         List<Floor> floors = new ArrayList<>();
-        floors.add(new Floor(0));
-        floors.add(new Floor(1));
-        floors.add(new Floor(2));
-        floors.add(new Floor(3));
+        final int nbFloors = Config.getInt("hotel.floors");
+        for (int i = 0 ; i < nbFloors ; i++){
+            floors.add(new Floor(i));
+        }
 
         List<Elevator> elevators = new ArrayList<>();
-        elevators.add(new Elevator(1, 0, elevatorCapacity));
-        elevators.add(new Elevator(2, 0, elevatorCapacity));
+        final int nbElevators = Config.getInt("hotel.elevators");
+        for (int i = 1 ; i <= nbElevators ; i++){
+            elevators.add(new Elevator(i, 0, elevatorCapacity));
+        }
 
         Hotel hotel = new Hotel(floors, elevators);
 
