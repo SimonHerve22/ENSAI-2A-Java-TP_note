@@ -19,12 +19,12 @@ public class Elevator {
 
     private static final Logger logger = LogManager.getLogger(Elevator.class);
 
-    private int id;
-    private int capacity;
-    private int currentFloor;
-    private List<Integer> destinationQueue;
-    private List<Person> passengers;
-    private List<Person> lastUnloaded;
+    protected int id;
+    protected int capacity;
+    protected int currentFloor;
+    protected List<Integer> destinationQueue;
+    protected List<Person> passengers;
+    protected List<Person> lastUnloaded;
 
     /**
      * Constructs a new Elevator with the specified parameters, without passengers already in the elevator.
@@ -171,10 +171,6 @@ public class Elevator {
         if (!destinationQueue.isEmpty())
             this.currentFloor = destinationQueue.removeFirst();
     }
-
-    /* Pour pouvoir tester qu'un ascenseur est plein, il faut tout d'abord pouvoir le remplir. 
-    Le fait de remplir this.passengers.size() utilise un grand nombre de méthodes, et il faut s'assurer qu'elles fonctionnent toutes.
-    Pour tester isFull(), il faudrait avoit this.passengers.size() directement égal à this.capacity, ce qui n'est pas si simple. */
 
     /**
      * Checks if the elevator is full.
