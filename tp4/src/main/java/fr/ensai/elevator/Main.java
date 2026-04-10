@@ -27,11 +27,16 @@ public class Main {
         }
 
         List<Elevator> elevators = new ArrayList<>();
-        final int nbElevators = Config.getInt("hotel.elevators") - 1 ;
+        final int nbElevators = Config.getInt("hotel.elevators") ;
         for (int i = 1 ; i <= nbElevators ; i++){
             elevators.add(new Elevator(i, 0, elevatorCapacity));
         }
-        elevators.add(new CrazyElevator(Config.getInt("hotel.elevators"), 0, elevatorCapacity)); /* crazy elevator, not mixed with normal elevators */
+
+        final int nbCrazyElevators = Config.getInt("hotel.crazyelevators");
+        for (int i = 1 + nbElevators ; i <= nbCrazyElevators + nbElevators; i++){
+            elevators.add(new CrazyElevator(i, 0, elevatorCapacity));
+        }
+
         Hotel hotel = new Hotel(floors, elevators);
 
         // --------------------------------------------------------------------
